@@ -55,7 +55,9 @@ function removeContact(contactId) {
  * Toggles the visibility of the AddContact Form
  */
 function toggleAddContactForm() {
-
+  let contactForm = document.getElementById("new-contact-form")
+  contactForm.classList.remove("hidden") 
+  // submit button refreshes and hides it, no need to toggle hide it. 
 }
 
 
