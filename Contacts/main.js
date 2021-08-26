@@ -11,7 +11,7 @@ let contacts = []
  * *** push: resources/push.jpg
  */
 function addContact(event) {
-  
+  contacts.push(event)
 }
 
 /**
