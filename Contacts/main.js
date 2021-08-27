@@ -1,6 +1,8 @@
 let contactForm = document.getElementById("new-contact-form")
 let contactList = document.getElementById("contact-list")
 let contacts = []
+let contact = {}
+loadContacts()
 
 /**
  * Called when submitting the new Contact Form
@@ -12,9 +14,22 @@ let contacts = []
  * *** push: resources/push.jpg
  */
 function addContact(event) {
-let form = event.target
-  
-saveContacts()
+  event.preventDefault()
+  let form = event.target
+
+  let contactName = form.contactName.value 
+  let contactPhone = form.contactPhone.value
+  let contactEmergency = form.contactEmergency.value // emergency value always on
+  let contactId = generateId()
+
+  newContact = contacts.find(contact => contact.name == contactName, contact.phone == contactPhone, contact.emergency == contactEmergency)
+
+if(!newContact) {
+  newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency}
+  contacts.push(newContact)
+  saveContacts()
+}
+
 form.reset()
 }
 
@@ -44,7 +59,7 @@ function loadContacts() {
  * contacts in the contacts array
  */
 function drawContacts() {
-  
+
 }
 
 /**
