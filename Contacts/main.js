@@ -16,20 +16,22 @@ loadContacts()
 function addContact(event) {
   event.preventDefault()
   let form = event.target
-
   let contactName = form.contactName.value 
   let contactPhone = form.contactPhone.value
-  let contactEmergency = form.contactEmergency.value // emergency value always on
+  let contactEmergency = form.contactEmergency.value
   let contactId = generateId()
 
   newContact = contacts.find(contact => contact.name == contactName, contact.phone == contactPhone, contact.emergency == contactEmergency)
-
+  
 if(!newContact) {
-  newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency}
-  contacts.push(newContact)
-  saveContacts()
+    if (document.getElementById('emergency').checked) {
+      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency}
+    } else {
+      newContact = {id: contactId, name: contactName, phone: contactPhone}
+    }
+    contacts.push(newContact)
+    saveContacts()
 }
-
 form.reset()
 }
 
