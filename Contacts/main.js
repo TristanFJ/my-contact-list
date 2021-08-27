@@ -25,15 +25,14 @@ function addContact(event) {
   
 if(!newContact) {
     if (document.getElementById('emergency').checked) {
-      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency}
+      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency + "emergency"}
     } else {
-      newContact = {id: contactId, name: contactName, phone: contactPhone}
+      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: "non-emergency"}
     }
     contacts.push(newContact)
     saveContacts()
 }
 form.reset()
-console.log("submitted")
 }
 
 /**
@@ -75,11 +74,12 @@ contacts.forEach(contact => {
     </p>
     <i class="action fa fa-trash text-danger"></i>
   </div>
+  
   ${contact.emergency}
 </div>
 `
-document.getElementById("contact-list").innerHTML = template
 })
+document.getElementById("contact-list").innerHTML = template
 }
 
 /**
