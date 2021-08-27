@@ -1,4 +1,5 @@
 let contactForm = document.getElementById("new-contact-form")
+let contactList = document.getElementById("contact-list")
 let contacts = []
 
 /**
@@ -11,7 +12,10 @@ let contacts = []
  * *** push: resources/push.jpg
  */
 function addContact(event) {
-  contacts.push(event)
+let form = event.target
+  
+saveContacts()
+form.reset()
 }
 
 /**
@@ -19,7 +23,7 @@ function addContact(event) {
  * Saves the string to localstorage at the key contacts 
  */
 function saveContacts() {
- 
+ window.localStorage.setItem("contacts", JSON.stringify(contacts))
 }
 
 /**
@@ -28,7 +32,10 @@ function saveContacts() {
  * the contacts array to the retrieved array
  */
 function loadContacts() {
-  
+  let contactsData = JSON.parse(window.localStorage.getItem("contacts"))
+  if(contactsData) {
+    contacts = contactsData
+  }
 }
 
 /**
@@ -37,7 +44,7 @@ function loadContacts() {
  * contacts in the contacts array
  */
 function drawContacts() {
- 
+  
 }
 
 /**
@@ -57,7 +64,6 @@ function removeContact(contactId) {
  */
 function toggleAddContactForm() {
   contactForm.classList.remove("hidden") 
-  // display contact form 
 }
 
 function hideContactForm() {
