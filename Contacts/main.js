@@ -73,14 +73,13 @@ contacts.forEach(contact => {
       <i class="fa fa-fw fa-phone"></i>
       <span>${contact.phone}</span>
     </p>
-    <i class="action fa fa-trash text-danger">${contact.emergency}</i>
+    <i class="action fa fa-trash text-danger"></i>
   </div>
+  ${contact.emergency}
 </div>
 `
 document.getElementById("contact-list").innerHTML = template
-
 })
-
 }
 
 /**
@@ -93,13 +92,18 @@ document.getElementById("contact-list").innerHTML = template
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
+
 }
 
 /**
  * Toggles the visibility of the AddContact Form
  */
 function toggleAddContactForm() {
-  contactForm.classList.remove("hidden") 
+  if(contactForm.classList.contains("hidden")){
+    contactForm.classList.remove("hidden")
+  }else{
+    contactForm.classList.add("hidden")
+  } 
 }
 
 function hideContactForm() {
