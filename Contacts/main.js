@@ -33,6 +33,7 @@ if(!newContact) {
     saveContacts()
 }
 form.reset()
+console.log("submitted")
 }
 
 /**
@@ -59,8 +60,26 @@ function loadContacts() {
  * This function targets the contacts-list on the 
  * DOM and adds a new div element for each of the
  * contacts in the contacts array
- */
+ */ // TODO 
 function drawContacts() {
+let template = ""
+
+contacts.forEach(contact => {
+  template += `
+  <div class="card mt-1 mb-1">
+  <h3 class="mt-1 mb-1">${contact.name}</h3>
+  <div class="d-flex space-between">
+    <p>
+      <i class="fa fa-fw fa-phone"></i>
+      <span>${contact.phone}</span>
+    </p>
+    <i class="action fa fa-trash text-danger">${contact.emergency}</i>
+  </div>
+</div>
+`
+document.getElementById("contact-list").innerHTML = template
+
+})
 
 }
 
@@ -72,7 +91,7 @@ function drawContacts() {
  * *** findIndex: resources/findIndex.jpg
  * *** splice: resources/splice.jpg
  * @param {string} contactId 
- */
+ */ // TODO 
 function removeContact(contactId) {
 }
 
