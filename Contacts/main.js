@@ -1,5 +1,6 @@
 let contactForm = document.getElementById("new-contact-form")
 let contactList = document.getElementById("contact-list")
+let contactId = generateId()
 let contacts = []
 let contact = {}
 loadContacts()
@@ -69,10 +70,10 @@ contacts.forEach(contact => {
   <h3 class="mt-1 mb-1">${contact.name}</h3>
   <div class="d-flex space-between">
     <p>
-      <i class="fa fa-fw fa-phone"></i>
+      <i class="fa fa-fw fa-phone></i>
       <span>${contact.phone}</span>
     </p>
-    <i class="action fa fa-trash text-danger"></i>
+    <i class="action fa fa-trash text-danger" onclick="removeContact(${contactId})"></i>
   </div>
   
   ${contact.emergency}
@@ -92,7 +93,8 @@ document.getElementById("contact-list").innerHTML = template
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
-
+let index = contacts.findIndex(id => id === contactId)
+console.log(index)
 }
 
 /**
