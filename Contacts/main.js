@@ -104,8 +104,10 @@ function drawContacts() {
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
-  console.log(contactId)
+  let index = contacts.findIndex(contact => contact.id === (contactId))
+  console.log(index)
 }
+
 
 /**
  * Toggles the visibility of the AddContact Form
