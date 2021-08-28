@@ -34,6 +34,7 @@ if(!newContact) {
     saveContacts()
 }
 form.reset()
+toggleAddContactForm()
 }
 
 /**
@@ -73,7 +74,7 @@ contacts.forEach(contact => {
       <i class="fa fa-fw fa-phone></i>
       <span>${contact.phone}</span>
     </p>
-    <i class="action fa fa-trash text-danger" onclick="removeContact(${contactId})"></i>
+    <button class="action fa fa-trash text-danger" onclick="removeContact(${contactId})"></button>
   </div>
   
   ${contact.emergency}
@@ -107,10 +108,6 @@ function toggleAddContactForm() {
     contactForm.classList.add("hidden")
   } 
 }
-
-// function hideContactForm() {
-//   contactForm.classList.add("hidden") 
-// }
 
 /**
  * Used to generate a random string id for mocked
