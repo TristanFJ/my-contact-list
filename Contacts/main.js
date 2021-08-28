@@ -84,7 +84,7 @@ function drawContacts() {
       <i class="fa fa-fw fa-phone"></i>
       <span>${contact.phone}</span>
     </p>
-    <button class="action fa fa-trash text-danger delete" title="DELETE CONTACT"></button>
+    <button class="action fa fa-trash text-danger delete" title="DELETE CONTACT" onclick="removeContact(contactId)"></button>
   </div>
   
   ${contact.emergency}
@@ -104,8 +104,7 @@ function drawContacts() {
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
-  let index = contacts.findIndex(id => id === contactId)
-  console.log(index)
+  alert("delete " + contactId)
 }
 
 /**
