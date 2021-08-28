@@ -45,6 +45,7 @@ function addContact(event) {
   }
   form.reset()
   toggleAddContactForm()
+  drawContacts()
 }
 
 /**
