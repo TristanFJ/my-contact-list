@@ -25,7 +25,7 @@ function addContact(event) {
   
 if(!newContact) {
     if (document.getElementById('emergency').checked) {
-      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency + "emergency"}
+      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency + " emergency"}
     } else {
       newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: "non-emergency"}
     }
@@ -116,7 +116,7 @@ function hideContactForm() {
  * @returns {string}
  */
 function generateId() {
-  return Math.floor(Math.random() * 10000000) + "-" + Math.floor(Math.random() * 10000000)
+  return Math.floor(Math.random() * 1000) + "-" + Math.floor(Math.random() * 1000)
 }
 
 
