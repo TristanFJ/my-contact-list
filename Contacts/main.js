@@ -104,7 +104,7 @@ function drawContacts() {
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
-  alert("delete " + contactId)
+  console.log(contactId)
 }
 
 /**
@@ -124,7 +124,7 @@ function toggleAddContactForm() {
  * @returns {string}
  */
 function generateId() {
-  return Math.floor(Math.random() * 1000) + "-" + Math.floor(Math.random() * 1000)
+  return Math.floor(Math.random() * 100000)
 }
 
 
