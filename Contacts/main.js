@@ -108,9 +108,9 @@ function toggleAddContactForm() {
   } 
 }
 
-function hideContactForm() {
-  contactForm.classList.add("hidden") 
-}
+// function hideContactForm() {
+//   contactForm.classList.add("hidden") 
+// }
 
 /**
  * Used to generate a random string id for mocked
