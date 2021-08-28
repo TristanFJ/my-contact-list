@@ -17,24 +17,34 @@ loadContacts()
 function addContact(event) {
   event.preventDefault()
   let form = event.target
-  let contactName = form.contactName.value 
+  let contactName = form.contactName.value
   let contactPhone = form.contactPhone.value
   let contactEmergency = form.contactEmergency.value
   let contactId = generateId()
 
   newContact = contacts.find(contact => contact.name == contactName, contact.phone == contactPhone, contact.emergency == contactEmergency)
-  
-if(!newContact) {
+
+  if (!newContact) {
     if (document.getElementById('emergency').checked) {
-      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: contactEmergency + " emergency"}
+      newContact = {
+        id: contactId,
+        name: contactName,
+        phone: contactPhone,
+        emergency: contactEmergency + " emergency"
+      }
     } else {
-      newContact = {id: contactId, name: contactName, phone: contactPhone, emergency: "non-emergency"}
+      newContact = {
+        id: contactId,
+        name: contactName,
+        phone: contactPhone,
+        emergency: "non-emergency"
+      }
     }
     contacts.push(newContact)
     saveContacts()
-}
-form.reset()
-toggleAddContactForm()
+  }
+  form.reset()
+  toggleAddContactForm()
 }
 
 /**
@@ -42,7 +52,7 @@ toggleAddContactForm()
  * Saves the string to localstorage at the key contacts 
  */
 function saveContacts() {
- window.localStorage.setItem("contacts", JSON.stringify(contacts))
+  window.localStorage.setItem("contacts", JSON.stringify(contacts))
 }
 
 /**
@@ -52,7 +62,7 @@ function saveContacts() {
  */
 function loadContacts() {
   let contactsData = JSON.parse(window.localStorage.getItem("contacts"))
-  if(contactsData) {
+  if (contactsData) {
     contacts = contactsData
   }
 }
@@ -63,10 +73,10 @@ function loadContacts() {
  * contacts in the contacts array
  */ //
 function drawContacts() {
-let template = ""
+  let template = ""
 
-contacts.forEach(contact => {
-  template += `
+  contacts.forEach(contact => {
+    template += `
   <div class="card mt-1 mb-1">
   <h3 class="mt-1 mb-1">${contact.name}</h3>
   <div class="d-flex space-between">
@@ -80,8 +90,8 @@ contacts.forEach(contact => {
   ${contact.emergency}
 </div>
 `
-})
-document.getElementById("contact-list").innerHTML = template
+  })
+  document.getElementById("contact-list").innerHTML = template
 }
 
 /**
@@ -94,19 +104,19 @@ document.getElementById("contact-list").innerHTML = template
  * @param {string} contactId 
  */ // TODO 
 function removeContact(contactId) {
-let index = contacts.findIndex(id => id === contactId)
-console.log(index)
+  let index = contacts.findIndex(id => id === contactId)
+  console.log(index)
 }
 
 /**
  * Toggles the visibility of the AddContact Form
  */
 function toggleAddContactForm() {
-  if(contactForm.classList.contains("hidden")){
+  if (contactForm.classList.contains("hidden")) {
     contactForm.classList.remove("hidden")
-  }else{
+  } else {
     contactForm.classList.add("hidden")
-  } 
+  }
 }
 
 /**
