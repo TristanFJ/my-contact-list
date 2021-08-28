@@ -71,10 +71,10 @@ contacts.forEach(contact => {
   <h3 class="mt-1 mb-1">${contact.name}</h3>
   <div class="d-flex space-between">
     <p>
-      <i class="fa fa-fw fa-phone></i>
+      <i class="fa fa-fw fa-phone"></i>
       <span>${contact.phone}</span>
     </p>
-    <button class="action fa fa-trash text-danger" onclick="removeContact(${contactId})"></button>
+    <i class="action fa fa-trash text-danger"></i>
   </div>
   
   ${contact.emergency}
