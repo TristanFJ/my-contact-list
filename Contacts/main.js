@@ -103,7 +103,7 @@ function drawContacts() {
  * *** findIndex: resources/findIndex.jpg
  * *** splice: resources/splice.jpg
  * @param {string} contactId 
- */ // TODO 
+ */ //
 function removeContact(contactId) {
   let index = contacts.findIndex(contact => contact.id === (contactId));
   contacts.splice(index, 1);
