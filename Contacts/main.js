@@ -84,7 +84,7 @@ function drawContacts() {
       <i class="fa fa-fw fa-phone"></i>
       <span>${contact.phone}</span>
     </p>
-    <i class="action fa fa-trash text-danger"></i>
+    <button class="action fa fa-trash text-danger delete"></button>
   </div>
   
   ${contact.emergency}

@@ -63,8 +63,17 @@ button {
   padding: 1em;
 }
 
+button.delete {
+  background-color: transparent;
+  border: none;
+}
+
 button:hover {
   background-color: var(--primary-lighten);
+}
+
+button.delete:hover {
+  background-color: var(--danger);
 }
 
 .contacts {
