@@ -61,7 +61,7 @@ function loadContacts() {
  * This function targets the contacts-list on the 
  * DOM and adds a new div element for each of the
  * contacts in the contacts array
- */ // TODO 
+ */ //
 function drawContacts() {
 let template = ""
 
